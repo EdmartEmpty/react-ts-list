@@ -1,7 +1,7 @@
 export interface Item {
   listing_id: number;
   url: string;
-  img:string;
+  img: string;
   title: string;
   currency: string;
   price: string;
