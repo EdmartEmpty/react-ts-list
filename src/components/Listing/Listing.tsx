@@ -9,15 +9,10 @@ export default function Listing({ item }: ItemInterFace) {
     item.quantity <= 10 ? `low` : item.quantity >= 20 ? `high` : `medium`;
 
   const priceLog: string =
-    item.currency === "USD"
+    item.currency === "USD" || item.currency === "EUR"
       ? new Intl.NumberFormat("ru-RU", {
           style: "currency",
-          currency: "USD",
-        }).format(+item.price)
-      : item.currency === "EUR"
-      ? new Intl.NumberFormat("ru-RU", {
-          style: "currency",
-          currency: "EUR",
+          currency: item.currency,
         }).format(+item.price)
       : `${item.price} ${item.currency}`;
 
